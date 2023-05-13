@@ -11,11 +11,11 @@ const Calendar = () => {
         <Tab title='Semana'/>
       </div>
       <div className='flex justify-around'>
-        <Widget Img={Snow} degree='11°C' text='now'/>
-        <Widget Img={Snow} degree='11°C' text='now'/>
-        <Widget Img={Snow} degree='11°C' text='now'/>
-        <Widget Img={Snow} degree='11°C' text='now'/>
-        <Widget Img={Snow} degree='11°C' text='now'/>
+        <Widget img={Snow} degree='11°C' text='now'/>
+        <Widget img={Snow} degree='11°C' text='now'/>
+        <Widget img={Snow} degree='11°C' text='now'/>
+        <Widget img={Snow} degree='11°C' text='now'/>
+        <Widget img={Snow} degree='11°C' text='now'/>
 
       </div>
     </div>
