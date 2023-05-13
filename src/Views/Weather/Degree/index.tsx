@@ -8,7 +8,7 @@ const Degree = () => {
     backgroundImage: `url(${SnowLight})`}}>
       <p className="text-base">dias</p>
       {/* <span>&#8451;</span> */}
-      <p className="text-8xl font-bold text-primary">-11°C </p>
+      <p className="text-8xl font-bold text-primary ">-11°C </p>
       <p className="text-sm">Snow</p>
     </div>
   );

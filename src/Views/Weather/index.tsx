@@ -4,7 +4,13 @@ import Calendar from './Calendar'
 
 const Weather = () => {
   return (
-    <div className="flex justify-between flex-col h-screen bg-primary3	">
+    <div className="
+      flex 
+      justify-between 
+      flex-col 
+      h-screen
+     bg-primary3
+      bg-[radial-gradient(circle,_var(--tw-gradient-stops))]  from-primary2 to-white">
       <Header />
       <Degree />
       <Calendar />
@@ -12,4 +18,4 @@ const Weather = () => {
   );
 };
 
-export default Weather;
+export default Weather
