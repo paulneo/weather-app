@@ -1,13 +1,40 @@
 import { faGrip, faSearch, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
+
+const PARAMS = {
+  appid: 'b173b46b28d94c1d706b29ea31117d49',
+  limit:'4', 
+  q:'arequipa',
+  lang:'es'
+}
 
 const Header = () => {
   const [isActiveSearch, setIsActiveSearch] = useState(false);
+  const [valSearch, setValSearch] = useState('')
+
+  const getWeatherCity = async () => {
+    try {
+      const res = await fetch("https://api.openweathermap.org/data/2.5/weather?" + new URLSearchParams(PARAMS))
+      const jsonData = await res.json();
+      console.log(jsonData);
+      console.log(res)
+    } catch {
+    }
+  }
 
   const handleClickSearch = () => {
     console.log("click");
+    getWeatherCity()
   };
+
+
+
+  const handleChangeSearch = (val: ChangeEvent<HTMLInputElement>) => {
+    setValSearch(val.target.value)
+  }
+
+  
 
   return (
     <div className="flex justify-between items-center h-20 mx-10">
@@ -31,6 +58,8 @@ const Header = () => {
         />
         <input
           type="text"
+          value={valSearch}
+          onChange={handleChangeSearch}
           className={` ${
             isActiveSearch ? "w-full px-4 pr-10 py-3 pl-10" : "w-0 py-4"
           } transition-all float-left  text-primary rounded-full focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary`}
